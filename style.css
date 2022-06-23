@@ -1,0 +1,160 @@
+* {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --primary-color: 240;
+    --secundary-color: 194;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 13rem;
+    line-height: 14.8rem;
+    color: hsla(var(--primary-color), 6%, 21%, 1);
+    ;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 82rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.settings {
+    width: 33rem;
+    
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.timer {
+    justify-content: space-around;
+    align-self: end;
+
+    display: flex;
+    flex-direction: row;
+    gap: 0rem;
+
+    opacity: 0;
+    animation: opacity 1100ms 300ms ease forwards;
+}
+
+.controls {
+    justify-content: space-around;
+    align-self: flex-start;
+
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+
+    opacity: 0;
+    animation: opacity 1100ms 700ms ease forwards;
+}
+
+.controls button {
+    width: 4.8rem;
+    height: 4.8rem;
+
+    background-color: rgba(3, 3, 3, 0);
+    border: none;
+}
+.controls button:hover {
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.sounds {
+    display: grid;
+    grid-template-areas: 
+    "forest rain"
+    "cafe fire";
+    gap: 3.2rem;
+
+    opacity: 0;
+    animation: leftRight 1100ms 300ms ease forwards;
+}
+
+.sounds button {
+    width: 13.8rem;
+    height: 15.2em;
+    
+    border: none;
+    border-radius: 2.4rem;
+
+    transition: all 300ms ease;
+}
+.sounds button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.forest {
+    grid-area: forest;  
+    
+    background-color: hsla(var(--primary-color), 9%, 89%, 1);
+}
+.rain {
+    grid-area: rain;
+
+    background-color: hsla(var(--primary-color), 9%, 89%, 1);
+}
+.cafe {
+    grid-area: cafe;
+
+    background-color: hsla(var(--primary-color), 9%, 89%, 1);
+}
+.fire {
+    grid-area: fire;
+
+    background-color: hsla(var(--primary-color), 9%, 89%, 1);
+}
+
+.forestS {
+    background: hsla(194, 97%, 31%, 1);
+}
+.rainS {
+    background: hsla(194, 97%, 31%, 1);
+}
+.cafeS {
+    background: hsla(194, 97%, 31%, 1);
+}
+.fireS {
+    background: hsla(194, 97%, 31%, 1);
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes leftRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-120px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
